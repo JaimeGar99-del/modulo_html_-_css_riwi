@@ -1,35 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Configuración General */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Saira Stencil", sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: whitesmoke;
+    background-color: #d9d9d9;
     color: #333;
 }
 
-/* Encabezado */
+/* ── TITLE BOX ── */
+.section-title {
+    display: inline-block;
+    background-color: #34126F;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 6px;
+    margin: 0 0 1rem 0;
+}
+
+/* ── HEADER ── */
 header {
     background-color: #34126F;
-    color: white;
-    padding: 1rem 5%;
+    color: #fff;
+    padding: 0.85rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
 
 header h1 {
-    color: white;
+    color: #fff;
     margin: 0;
-    font-size: 1.5rem;
-}
-
-/* Navegación */
-nav h2 {
-    display: none;
+    font-size: 1.4rem;
 }
 
 nav ul {
@@ -37,73 +52,150 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 25px;
+    gap: 24px;
 }
 
 nav a {
     text-decoration: none;
-    color: #ffffff;
-    font-weight: bold;
+    color: #ffffffcc;
+    font-weight: 700;
     text-transform: uppercase;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
+    font-size: 0.85rem;
+    transition: color 0.2s;
 }
 
 nav a:hover {
-    color: #3498db;
+    color: #fff;
 }
 
-/* Secciones */
-.sobremi, .proyectos, .contacto{
-    padding: 2.5%;
-    /* margin-top: 1%;
-    margin-bottom: 0.1%; */
-    /* margin-left: 1%;
-    margin-right: 1%;; */
-    
-    background: #ffffff;
-    border-radius: px;
-    box-shadow: 0 6px 20px gray;
-    border: 1px  #441791;
-    text-decoration: none;
-}
-.proyectos{
-    padding: 2.5%;
-    margin-top: 0.05%;
-    background: hwb(270 93% 2% / 0.628);
-    border-radius: px;
-    box-shadow: 0 6px 20px gray;
-    border: 1px  #441791;
-    text-decoration: none;
-}
-.contacto{
-    padding: 2.5%;
-    margin-top: 0.05%;
-    /* margin-left: 1%;
-    margin-right: 1%;; */
-    
-    background: hwb(0 85% 15% / 0.628);
-    border-radius: px;
-    box-shadow: 0 6px 20px gray;
-    border: 1px  #441791;
-    text-decoration: none;
-}
-.galery{
-    padding: 2.5%;
-    margin-top: 1%;
-    margin-left: 1%;
-    margin-right: 1%;
-    
-    background: hwb(270 93% 2% / 0.628);
-    border-radius: 30px;
-    box-shadow: 0 6px 20px gray;
-    border: 1px  #441791;
-    text-decoration: none;
+/* ── SECTIONS ── */
+section {
+    padding: 2rem 5%;
 }
 
-h1, h2 {
+.sobremi {
+    background: #fff;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.proyectos {
+    background: #ede9f9;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.contacto {
+    background: #f5ebe8;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+section h2 {
     color: #2c3e50;
-    margin-top: 10px;
+    margin-top: 0;
+    text-align: left;
+}
+
+/* ── PROJECTS LIST ── */
+.proyectos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.proyectos ul li a {
+    display: inline-block;
+    text-decoration: none;
+    background: #fff;
+    color: #34126F;
+    padding: 6px 16px;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px #6823DE44;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.proyectos ul li a:hover {
+    background: #6823DE;
+    color: #fff;
+}
+
+/* ── FORM ── */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 1rem;
+    max-width: 480px;
+}
+
+form label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: -6px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 9px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: sans-serif;
+    transition: border-color 0.2s;
+    background: #fff;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #6823DE;
+}
+
+input[type="submit"] {
+    background-color: #34126F;
+    color: #fff;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: "Saira Stencil", sans-serif;
+    transition: background 0.2s;
+    align-self: flex-start;
+}
+
+input[type="submit"]:hover {
+    background-color: #6823DE;
+}
+
+/* ── GALLERY PAGE ── */
+.galery {
+    padding: 2rem 4%;
+    background: #ede9f9;
+    border-radius: 20px;
+    margin: 1.5rem 2%;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.mascotas_title {
+    display: block;
+    width: fit-content;
+    background-color: #34126F;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 6px;
+    margin: 1.5rem auto 0;
     text-align: center;
 }
 
@@ -112,170 +204,122 @@ h1, h2 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding: 20px 0;
+    padding: 20px 0 0;
 }
 
 .enlace-foto {
     text-decoration: none;
     color: inherit;
 }
-.enlace-foto h2 {
-    text-decoration: none;
-    color: inherit;
-}
 
-/* El div contenedor de cada foto */
 .contenedor-foto {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
     overflow: hidden;
     border-radius: 12px;
-    box-shadow: 0 6px 20px #6823DE;
+    box-shadow: 0 4px 16px #6823DE55;
     cursor: pointer;
-    margin: 15px;
 }
 
 .contenedor-foto img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    display: flex;
-    justify-content: center;
-    align-items: center;   
-}
-.contenedor-foto:hover  {
-    opacity: 1;
-    transform: scale(1.2);
-    transition: transform 0.3s ease;
-    
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
 }
 
-/* El article con la descripción (Hover) */
+.contenedor-foto:hover img {
+    transform: scale(1.08);
+}
+
 .contenedor-foto article {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(39, 1, 107, 0.9); 
-    color: white;
+    inset: 0;
+    background-color: rgba(39, 1, 107, 0.88);
+    color: #fff;
     padding: 20px;
-    box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.4s ease;
-    
+    transform: translateY(16px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 .contenedor-foto:hover article {
     opacity: 1;
     transform: translateY(0);
-    
 }
 
-/* Listas simples */
-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-section ul li {
-    text-decoration: none;
-    background: none;       
-    margin: 0.5rem 0;      
-    padding: 5px;             
-    border-left: none;   
-    border-radius: 0; 
-    transition: none; 
-    text-align: center;
-}
-section ul li a{
-    text-decoration: none;
-    background: none;       
-    margin: 0.5rem 0;
-    box-shadow: 0 6px 20px #6823DE;
-    
-    padding: 5px;             
-    border-left: none;   
-    border-radius: 5px; 
-    transition: none; 
-}
-
-section ul li:hover {
-    transform: translateX(5px);
-    color: #DE5123;
-}
-
-/* Formulario */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-input[type="text"], 
-input[type="email"], 
-textarea {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+.contenedor-foto article h2 {
     font-size: 1rem;
-    font-family: sans-serif; /* Para que sea más legible al escribir */
+    margin: 0 0 6px;
+    color: #fff;
 }
 
-input[type="submit"] {
-    background-color: #34126F;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: background 0.3s;
-    font-family: "Saira Stencil", sans-serif;
+.contenedor-foto article p {
+    font-size: 0.85rem;
+    margin: 0;
+    color: #ffffffcc;
 }
 
-input[type="submit"]:hover {
-    background-color: #6823DE;
-}
+/* ── FOOTER ── */
 footer {
-    background-color: #34126F; /* El mismo morado del header */
-    color: white;
-    padding: 2rem 5%;
-    margin-top: 3rem;
+    background-color: #34126F;
+    color: #fff;
+    padding: 1.5rem 5%;
+    margin-top: 2.5rem;
     text-align: center;
-    border-top: 4px solid #6823DE;
+    border-top: 3px solid #6823DE;
 }
 
 .footer-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #ffffffaa;
 }
 
 .redes-sociales {
     display: flex;
-    gap: 20px;
+    gap: 16px;
 }
 
 .redes-sociales a {
-    color: #3498db;
+    color: #7ec8f5;
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: color 0.2s;
 }
 
 .redes-sociales a:hover {
-    color: white;
+    color: #fff;
     text-decoration: underline;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .contenedor-foto {
+        width: 90vw;
+        height: 260px;
+    }
+    form {
+        max-width: 100%;
+    }
 }

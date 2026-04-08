@@ -1,51 +1,56 @@
 <!DOCTYPE html>
-<html >
+<html lang="es">
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>HOME</title>
+    <title>Jaime Garcia – Home</title>
 </head>
 <body>
     <header>
-        <h1>Jaime Garcia</h1> 
+        <h1>Jaime Garcia</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" aria-current="page">Home</a></li>
                 <li><a href="mascotas.html">Mascotas</a></li>
             </ul>
         </nav>
     </header>
+
     <section class="sobremi">
-        <h2>Sobre mi</h2>
+        <span class="section-title">Sobre mí</span>
         <p>zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz</p>
-    </section >
+    </section>
+
     <section class="proyectos">
+        <span class="section-title">Proyectos</span>
         <ul>
-            <h2>Proyectos</h2>
             <li><a href="mascotas.html">Mascotas</a></li>
-            <li><a href="">###</a></li>
-            <li><a href="">###</a></li>
+            <li><a href="#">###</a></li>
+            <li><a href="#">###</a></li>
         </ul>
-    </section >
+    </section>
+
     <section class="contacto">
-    <h2>Contacto</h2>
-    <form action="">
-        <label for="fname">Nombre</label>
-        <input type="text" id="fname" name="fname" placeholder="nombre"><br>
-        
-        <label for="lname">Apellido</label>
-        <input type="text" id="lname" name="lname" placeholder="apellido"><br>
-        
-        <input type="submit" value="Enviar">
-    </form>
-</section>
-<footer>
-    <div class="footer-content">
-        <p>&copy; 2026 Jaime Garcia - Todos los derechos reservados</p>
-        <div class="redes-sociales">
-            <a href="https://github.com/JaimeGar99-del">GitHub</a>
+        <span class="section-title">Contacto</span>
+        <form action="">
+            <label for="fname">Nombre</label>
+            <input type="text" id="fname" name="fname" placeholder="Tu nombre">
+
+            <label for="lname">Apellido</label>
+            <input type="text" id="lname" name="lname" placeholder="Tu apellido">
+
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Jaime Garcia – Todos los derechos reservados</p>
+            <div class="redes-sociales">
+                <a href="https://github.com/JaimeGar99-del" target="_blank" rel="noopener">GitHub</a>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 </body>
 </html>
