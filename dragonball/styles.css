@@ -43,7 +43,7 @@ header img {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
+    gap: 10px;
     padding: 20px 0 0;
 }
 
@@ -54,10 +54,10 @@ header img {
 
 .contenedor-foto {
     position: relative; /* Cambiado de sticky a relative para que el texto posicione bien */
-    width: 400px;
-    height: 800px;
+    width: 180px;
+    height: 440px;
     overflow: hidden;
-    border-radius: 15px; /* Bordes un poco más suaves */
+    border-radius: 10px; /* Bordes un poco más suaves */
     box-shadow: 0 4px 16px rgba(255, 115, 0, 0.3); /* Sombra base más suave */
     cursor: pointer;
     display: flex;       /* Centrado de imagen */
@@ -73,8 +73,8 @@ header img {
 }
 
 .contenedor-foto img {
-    width: 100%;  /* Cambiado a 100% para que no queden bordes vacíos */
-    height: 100%;
+    width: 90%;  /* Cambiado a 100% para que no queden bordes vacíos */
+    height: auto;
     object-fit: cover; /* Mantiene al personaje centrado sin deformar */
     display: block;
     transition: transform 0.5s ease; /* Transición más fluida */
@@ -107,14 +107,19 @@ header img {
 }
 
 .contenedor-foto article h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 0 0 10px;
-    color: #fff;
+    color: #ff6005;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .contenedor-foto article p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin: 0;
     color: #ffffff;
+}
+.contenedor-foto article .p_title{
+   font-size: 1.5rem;
+    margin: 0;
+    color: #fc9002; 
 }
