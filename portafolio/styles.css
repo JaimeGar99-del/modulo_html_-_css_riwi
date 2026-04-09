@@ -3,7 +3,6 @@
 *, *::before, *::after {
     box-sizing: border-box;
 }
-
 body {
     font-family: "Saira Stencil", sans-serif;
     line-height: 1.6;
@@ -12,8 +11,6 @@ body {
     background-color: #d9d9d9;
     color: #333;
 }
-
-/* ── TITLE BOX ── */
 .section-title {
     display: inline-block;
     background-color: #34126F;
@@ -25,10 +22,8 @@ body {
     padding: 4px 14px;
     border-radius: 6px;
     margin: 0 0 1rem 0;
-    tex
+    text-align: center;
 }
-
-/* ── HEADER ── */
 header {
     background-color: #34126F;
     color: #fff;
@@ -41,13 +36,11 @@ header {
     z-index: 100;
     box-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
-
 header h1 {
     color: #fff;
     margin: 0;
     font-size: 1.4rem;
 }
-
 nav ul {
     list-style: none;
     padding: 0;
@@ -55,7 +48,6 @@ nav ul {
     display: flex;
     gap: 24px;
 }
-
 nav a {
     text-decoration: none;
     color: #ffffffcc;
@@ -64,38 +56,43 @@ nav a {
     font-size: 0.85rem;
     transition: color 0.2s;
 }
-
 nav a:hover {
     color: #fff;
 }
-
-/* ── SECTIONS ── */
 section {
     padding: 2rem 5%;
 }
 
 .sobremi {
-    background: #fff;
+    background: linear-gradient(135deg, #ffffff 0%, #ede9f9 100%);
     box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
-
 .proyectos {
-    background: #ede9f9;
+    background: linear-gradient(135deg, #ede9f9 0%, #d4c8f5 100%);
     box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
-
 .contacto {
-    background: #f5ebe8;
+    background: linear-gradient(135deg, #f5ebe8 0%, #e8d5f0 100%);
     box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
-
 section h2 {
     color: #2c3e50;
     margin-top: 0;
-    text-align: left;
+    align-items: center;
+    text-align: center;
 }
-
-/* ── PROJECTS LIST ── */
 .proyectos ul {
     list-style: none;
     padding: 0;
@@ -103,8 +100,9 @@ section h2 {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    justify-content: center;
+    text-align: center;
 }
-
 .proyectos ul li a {
     display: inline-block;
     text-decoration: none;
@@ -116,14 +114,14 @@ section h2 {
     font-weight: 700;
     font-size: 0.9rem;
     transition: background 0.2s, color 0.2s;
+    align-items: center;
+    text-align: center;
 }
-
 .proyectos ul li a:hover {
     background: #6823DE;
     color: #fff;
 }
 
-/* ── FORM ── */
 form {
     display: flex;
     flex-direction: column;
@@ -131,16 +129,13 @@ form {
     margin-top: 1rem;
     max-width: 480px;
 }
-
 form label {
     font-size: 0.85rem;
     font-weight: 700;
     color: #555;
     margin-bottom: -6px;
 }
-
 input[type="text"],
-input[type="email"],
 textarea {
     padding: 9px 12px;
     border: 1px solid #ccc;
@@ -150,14 +145,11 @@ textarea {
     transition: border-color 0.2s;
     background: #fff;
 }
-
 input[type="text"]:focus,
-input[type="email"]:focus,
 textarea:focus {
     outline: none;
     border-color: #6823DE;
 }
-
 input[type="submit"] {
     background-color: #34126F;
     color: #fff;
@@ -171,20 +163,16 @@ input[type="submit"] {
     transition: background 0.2s;
     align-self: flex-start;
 }
-
 input[type="submit"]:hover {
     background-color: #6823DE;
 }
-
-/* ── GALLERY PAGE ── */
-.galery {
+.gallery {
     padding: 2rem 4%;
-    background: #ede9f9;
+    background: linear-gradient(135deg, #ede9f9 0%, #d4c8f5 100%);
     border-radius: 20px;
     margin: 1.5rem 2%;
     box-shadow: 0 4px 16px rgba(0,0,0,0.1);
 }
-
 .mascotas_title {
     display: block;
     width: fit-content;
@@ -199,7 +187,6 @@ input[type="submit"]:hover {
     margin: 1.5rem auto 0;
     text-align: center;
 }
-
 .galeria {
     display: flex;
     flex-wrap: wrap;
@@ -207,22 +194,19 @@ input[type="submit"]:hover {
     gap: 20px;
     padding: 20px 0 0;
 }
-
 .enlace-foto {
     text-decoration: none;
     color: inherit;
 }
-
 .contenedor-foto {
     position: relative;
     width: 280px;
     height: 280px;
     overflow: hidden;
     border-radius: 12px;
-    box-shadow: 0 4px 16px #6823DE55;
+    box-shadow: 0 4px 16px #6823de26;
     cursor: pointer;
 }
-
 .contenedor-foto img {
     width: 100%;
     height: 100%;
@@ -230,15 +214,13 @@ input[type="submit"]:hover {
     display: block;
     transition: transform 0.35s ease;
 }
-
 .contenedor-foto:hover img {
     transform: scale(1.08);
 }
-
 .contenedor-foto article {
     position: absolute;
     inset: 0;
-    background-color: rgba(39, 1, 107, 0.88);
+    background-color: rgba(40, 1, 107, 0.43);
     color: #fff;
     padding: 20px;
     display: flex;
@@ -250,25 +232,64 @@ input[type="submit"]:hover {
     transform: translateY(16px);
     transition: opacity 0.35s ease, transform 0.35s ease;
 }
-
 .contenedor-foto:hover article {
     opacity: 1;
     transform: translateY(0);
 }
-
 .contenedor-foto article h2 {
     font-size: 1rem;
     margin: 0 0 6px;
     color: #fff;
 }
-
 .contenedor-foto article p {
     font-size: 0.85rem;
     margin: 0;
     color: #ffffffcc;
 }
-
-/* ── FOOTER ── */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background-color: rgba(42, 1, 104, 0.691);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    cursor: zoom-out;
+}
+.lightbox:target {
+    display: flex;
+}
+.lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 12px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+    object-fit: contain;
+    cursor: default;
+}
+.lightbox-caption {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: "Saira Stencil", sans-serif;
+}
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 900;
+    line-height: 1;
+    transition: color 0.2s;
+}
+.lightbox-close:hover {
+    color: #6823DE;
+}
 footer {
     background-color: #34126F;
     color: #fff;
@@ -277,25 +298,21 @@ footer {
     text-align: center;
     border-top: 3px solid #6823DE;
 }
-
 .footer-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
 }
-
 .footer-content p {
     margin: 0;
     font-size: 0.85rem;
     color: #ffffffaa;
 }
-
 .redes-sociales {
     display: flex;
     gap: 16px;
 }
-
 .redes-sociales a {
     color: #7ec8f5;
     text-decoration: none;
@@ -303,13 +320,10 @@ footer {
     font-weight: 700;
     transition: color 0.2s;
 }
-
 .redes-sociales a:hover {
     color: #fff;
     text-decoration: underline;
 }
-
-/* ── RESPONSIVE ── */
 @media (max-width: 600px) {
     header {
         flex-direction: column;
