@@ -3,38 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlace al archivo de estilos externo -->
     <link rel="stylesheet" href="styles.css">
     <title>Jaime Garcia – Mascotas</title>
 </head>
 <body>
+
+    <!-- Encabezado con título de la página y navegación -->
     <header>
         <h1>Mis Mascotas</h1>
         <nav>
             <ul>
+                <!-- Enlace de retorno al portafolio principal -->
                 <li><a href="index.html">Home</a></li>
+                <!-- Enlace activo: página actual (Mascotas) -->
                 <li><a href="mascotas.html" aria-current="page">Mascotas</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Título de la sección galería -->
     <span class="mascotas_title">Galería</span>
 
+    <!-- Sección de galería de mascotas -->
     <section class="gallery">
         <div class="galeria">
 
+            <!-- Tarjeta 1: Maine Coon -->
+            <!-- Al hacer clic abre el lightbox con id="foto1" -->
             <a href="#foto1" class="enlace-foto">
                 <div class="contenedor-foto">
-                    <img src="1.webp" alt="Maine Coon">
+                    <img src="5.jpeg" alt="Maine Coon">
+                    <!-- Descripción superpuesta al hacer hover -->
                     <article>
                         <h2>Maine Coon</h2>
-                        <p>“Grande, fuerte y muy cariñoso. Destaca por su pelaje abundante y su carácter amigable.”</p>
+                        <p>"Grande, fuerte y muy cariñoso. Destaca por su pelaje abundante y su carácter amigable."</p>
                     </article>
                 </div>
             </a>
 
+            <!-- Tarjeta 2: Bengalí -->
             <a href="#foto2" class="enlace-foto">
                 <div class="contenedor-foto">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Ex3kyj7lFeL3UaCQdWoDMtjcJIcfS10Dkw&s" alt="Bengalí">
+                    <img src="6.jpeg" alt="Bengalí">
                     <article>
                         <h2>Bengalí</h2>
                         <p>Activo y juguetón. Su pelaje con manchas le da un aspecto salvaje</p>
@@ -42,9 +53,10 @@
                 </div>
             </a>
 
+            <!-- Tarjeta 3: Persa -->
             <a href="#foto3" class="enlace-foto">
                 <div class="contenedor-foto">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEcsJc-fWVHSaFvpVBIwnP0LfnuSfB6knYJg&s" alt="Persa">
+                    <img src="3.jpeg" alt="Persa">
                     <article>
                         <h2>Persa</h2>
                         <p>Calmado y elegante. Famoso por su cara achatada y su largo pelaje.</p>
@@ -52,9 +64,10 @@
                 </div>
             </a>
 
+            <!-- Tarjeta 4: Angola -->
             <a href="#foto4" class="enlace-foto">
                 <div class="contenedor-foto">
-                    <img src="https://img.freepik.com/fotos-premium/gato-blanco-esponjoso_1279821-45284.jpg" alt="Angola">
+                    <img src="4.jpeg" alt="Angola">
                     <article>
                         <h2>Angola</h2>
                         <p>Elegante, activo y muy inteligente. Destaca por su pelaje largo y sedoso, además de su personalidad juguetona y cariñosa.</p>
@@ -62,9 +75,10 @@
                 </div>
             </a>
 
+            <!-- Tarjeta 5: San Bernardo -->
             <a href="#foto5" class="enlace-foto">
                 <div class="contenedor-foto">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjOBFjpctEXaJ4rB3S1v350WGS0zYkJLtSsw&s" alt="San Bernardo">
+                    <img src="2.jpeg" alt="San Bernardo">
                     <article>
                         <h2>San Bernardo</h2>
                         <p>Grande, noble y muy protector. Destaca por su carácter tranquilo, lealtad y su apariencia imponente pero amigable.</p>
@@ -72,9 +86,10 @@
                 </div>
             </a>
 
+            <!-- Tarjeta 6: Pastor Alemán -->
             <a href="#foto6" class="enlace-foto">
                 <div class="contenedor-foto">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVM_K58oAFtNV2XX5Op1BDOuW5IIS2IL-yrA&s" alt="Pastor Aleman">
+                    <img src="1.jpeg" alt="Pastor Aleman">
                     <article>
                         <h2>Pastor Aleman</h2>
                         <p>Inteligente, leal y muy protector. Destaca por su facilidad de entrenamiento, valentía y fuerte vínculo con su dueño.</p>
@@ -85,51 +100,66 @@
         </div>
     </section>
 
-    <!-- Lightboxes (fuera de section) -->
+    <!-- ==================== -->
+    <!-- Lightboxes (vista ampliada de cada foto) -->
+    <!-- Se activan con el hash de URL correspondiente al id -->
+    <!-- ==================== -->
+
+    <!-- Lightbox 1: Maine Coon -->
     <div id="foto1" class="lightbox">
+        <!-- Botón para cerrar el lightbox (vuelve al hash vacío) -->
         <a href="#" class="lightbox-close">&#x2715;</a>
-        <img src="1.webp" alt="Maine Coon">
+        <img src="5.jpeg" alt="Maine Coon">
         <p class="lightbox-caption">Maine Coon</p>
     </div>
 
+    <!-- Lightbox 2: Bengalí -->
     <div id="foto2" class="lightbox">
         <a href="#" class="lightbox-close">&#x2715;</a>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Ex3kyj7lFeL3UaCQdWoDMtjcJIcfS10Dkw&s" alt="Bengalí">
+        <img src="6.jpeg" alt="Bengalí">
         <p class="lightbox-caption">Bengalí</p>
     </div>
 
+    <!-- Lightbox 3: Persa -->
     <div id="foto3" class="lightbox">
         <a href="#" class="lightbox-close">&#x2715;</a>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEcsJc-fWVHSaFvpVBIwnP0LfnuSfB6knYJg&s" alt="Persa">
+        <img src="3.jpeg" alt="Persa">
         <p class="lightbox-caption">Persa</p>
     </div>
 
+    <!-- Lightbox 4: Angola -->
     <div id="foto4" class="lightbox">
         <a href="#" class="lightbox-close">&#x2715;</a>
-        <img src="https://img.freepik.com/fotos-premium/gato-blanco-esponjoso_1279821-45284.jpg" alt="Angola">
+        <img src="4.jpeg" alt="Angola">
         <p class="lightbox-caption">Angola</p>
     </div>
 
+    <!-- Lightbox 5: San Bernardo -->
     <div id="foto5" class="lightbox">
         <a href="#" class="lightbox-close">&#x2715;</a>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjOBFjpctEXaJ4rB3S1v350WGS0zYkJLtSsw&s" alt="San Bernardo">
+        <img src="2.jpeg" alt="San Bernardo">
         <p class="lightbox-caption">San Bernardo</p>
     </div>
 
+    <!-- Lightbox 6: Pastor Alemán -->
     <div id="foto6" class="lightbox">
         <a href="#" class="lightbox-close">&#x2715;</a>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVM_K58oAFtNV2XX5Op1BDOuW5IIS2IL-yrA&s" alt="Pastor Aleman">
+        <img src="1.jpeg" alt="Pastor Aleman">
         <p class="lightbox-caption">Pastor Aleman</p>
     </div>
 
+    <!-- Pie de página -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2026 Jaime Garcia – Todos los derechos reservados</p>
+            <!-- Nota de derechos de imagen -->
             <p>&copy; 2026 imagenes sacas como referencias – Todos los derechos reservados al autor original</p>
+            <!-- Enlace al perfil de GitHub -->
             <div class="redes-sociales">
                 <a href="https://github.com/JaimeGar99-del" target="_blank" rel="noopener">GitHub</a>
             </div>
         </div>
     </footer>
+
 </body>
 </html>

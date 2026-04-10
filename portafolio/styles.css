@@ -1,8 +1,10 @@
+/* Importación de fuente personalizada desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap');
-
+/* Reset universal: modelo de caja consistente en todos los elementos */
 *, *::before, *::after {
     box-sizing: border-box;
 }
+/* Estilos generales del cuerpo de la página */
 body {
     font-family: "Saira Stencil", sans-serif;
     line-height: 1.6;
@@ -11,8 +13,9 @@ body {
     background-color: #d9d9d9;
     color: #333;
 }
-.section-title {
-    display: inline-block;
+/* Estilos compartidos de los badges de título (section-title y mascotas_title) */
+.section-title,
+.mascotas_title {
     background-color: #34126F;
     color: #fff;
     font-size: 1rem;
@@ -21,9 +24,17 @@ body {
     text-transform: uppercase;
     padding: 4px 14px;
     border-radius: 6px;
-    margin: 0 0 1rem 0;
     text-align: center;
 }
+/* Diferencias específicas de cada badge */
+.section-title {
+    display: inline-block;
+    margin: 0 0 1rem 0;
+}
+/* ==================== */
+/* HEADER */
+/* ==================== */
+/* Barra de navegación superior fija */
 header {
     background-color: #34126F;
     color: #fff;
@@ -31,16 +42,18 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    position: relative; /* Se mantiene visible al hacer scroll */
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
+/* Título del sitio dentro del header */
 header h1 {
     color: #fff;
     margin: 0;
     font-size: 1.4rem;
 }
+/* Lista horizontal del menú de navegación */
 nav ul {
     list-style: none;
     padding: 0;
@@ -48,6 +61,7 @@ nav ul {
     display: flex;
     gap: 24px;
 }
+/* Estilos de los enlaces del menú */
 nav a {
     text-decoration: none;
     color: #ffffffcc;
@@ -56,13 +70,23 @@ nav a {
     font-size: 0.85rem;
     transition: color 0.2s;
 }
-nav a:hover {
+/* Hover compartido: ambos enlaces se vuelven blanco puro */
+nav a:hover,
+.redes-sociales a:hover {
     color: #fff;
 }
+/* Subrayado adicional solo en redes sociales */
+.redes-sociales a:hover {
+    text-decoration: underline;
+}
+/* Padding general para todas las secciones */
 section {
     padding: 2rem 5%;
 }
-
+/* ==================== */
+/* SECCIONES DE INDEX */
+/* ==================== */
+/* Sección "Sobre mí": fondo degradado blanco a lila claro */
 .sobremi {
     background: linear-gradient(135deg, #ffffff 0%, #ede9f9 100%);
     box-shadow: 0 4px 14px rgba(0,0,0,0.08);
@@ -71,6 +95,7 @@ section {
     align-items: center;
     text-align: center;
 }
+/* Sección "Proyectos": fondo degradado lila suave */
 .proyectos {
     background: linear-gradient(135deg, #ede9f9 0%, #d4c8f5 100%);
     box-shadow: 0 4px 14px rgba(0,0,0,0.08);
@@ -79,6 +104,7 @@ section {
     align-items: center;
     text-align: center;
 }
+/* Sección "Contacto": fondo degradado melocotón a lila */
 .contacto {
     background: linear-gradient(135deg, #f5ebe8 0%, #e8d5f0 100%);
     box-shadow: 0 4px 14px rgba(0,0,0,0.08);
@@ -87,12 +113,14 @@ section {
     align-items: center;
     text-align: center;
 }
+/* Títulos h2 dentro de secciones */
 section h2 {
     color: #2c3e50;
     margin-top: 0;
     align-items: center;
     text-align: center;
 }
+/* Lista de proyectos en fila con salto de línea */
 .proyectos ul {
     list-style: none;
     padding: 0;
@@ -103,6 +131,7 @@ section h2 {
     justify-content: center;
     text-align: center;
 }
+/* Tarjetas de enlace de cada proyecto */
 .proyectos ul li a {
     display: inline-block;
     text-decoration: none;
@@ -117,11 +146,15 @@ section h2 {
     align-items: center;
     text-align: center;
 }
+/* Hover en tarjetas de proyectos */
 .proyectos ul li a:hover {
     background: #6823DE;
     color: #fff;
 }
-
+/* ==================== */
+/* FORMULARIO DE CONTACTO */
+/* ==================== */
+/* Contenedor del formulario en columna */
 form {
     display: flex;
     flex-direction: column;
@@ -129,12 +162,14 @@ form {
     margin-top: 1rem;
     max-width: 480px;
 }
+/* Etiquetas de los campos */
 form label {
     font-size: 0.85rem;
     font-weight: 700;
     color: #555;
     margin-bottom: -6px;
 }
+/* Campos de texto e inputs */
 input[type="text"],
 textarea {
     padding: 9px 12px;
@@ -145,11 +180,13 @@ textarea {
     transition: border-color 0.2s;
     background: #fff;
 }
+/* Borde morado al enfocar el campo */
 input[type="text"]:focus,
 textarea:focus {
     outline: none;
     border-color: #6823DE;
 }
+/* Botón de envío del formulario */
 input[type="submit"] {
     background-color: #34126F;
     color: #fff;
@@ -163,9 +200,14 @@ input[type="submit"] {
     transition: background 0.2s;
     align-self: flex-start;
 }
+/* Hover en botón de envío */
 input[type="submit"]:hover {
     background-color: #6823DE;
 }
+/* ==================== */
+/* GALERÍA DE MASCOTAS */
+/* ==================== */
+/* Contenedor principal de la galería con fondo lila */
 .gallery {
     padding: 2rem 4%;
     background: linear-gradient(135deg, #ede9f9 0%, #d4c8f5 100%);
@@ -173,20 +215,13 @@ input[type="submit"]:hover {
     margin: 1.5rem 2%;
     box-shadow: 0 4px 16px rgba(0,0,0,0.1);
 }
+/* Diferencias específicas del badge de galería */
 .mascotas_title {
     display: block;
     width: fit-content;
-    background-color: #34126F;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    padding: 4px 14px;
-    border-radius: 6px;
     margin: 1.5rem auto 0;
-    text-align: center;
 }
+/* Grilla flexible de tarjetas de fotos */
 .galeria {
     display: flex;
     flex-wrap: wrap;
@@ -194,10 +229,12 @@ input[type="submit"]:hover {
     gap: 20px;
     padding: 20px 0 0;
 }
+/* Enlace que envuelve cada tarjeta (sin subrayado) */
 .enlace-foto {
     text-decoration: none;
     color: inherit;
 }
+/* Tarjeta de foto: cuadrada con overflow oculto */
 .contenedor-foto {
     position: relative;
     width: 280px;
@@ -207,20 +244,23 @@ input[type="submit"]:hover {
     box-shadow: 0 4px 16px #6823de26;
     cursor: pointer;
 }
+/* Imagen dentro de la tarjeta: cubre todo el espacio */
 .contenedor-foto img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.35s ease;
+    transition: transform 0.35s ease; /* Zoom suave al hacer hover */
 }
+/* Zoom de imagen al pasar el cursor */
 .contenedor-foto:hover img {
     transform: scale(1.08);
 }
+/* Overlay de descripción sobre la imagen (oculto por defecto) */
 .contenedor-foto article {
     position: absolute;
     inset: 0;
-    background-color: rgba(40, 1, 107, 0.43);
+    background-color: rgba(40, 1, 107, 0.43); /* Morado semitransparente */
     color: #fff;
     padding: 20px;
     display: flex;
@@ -228,39 +268,48 @@ input[type="submit"]:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    opacity: 0;
-    transform: translateY(16px);
+    opacity: 0;                         /* Invisible por defecto */
+    transform: translateY(16px);        /* Ligeramente desplazado hacia abajo */
     transition: opacity 0.35s ease, transform 0.35s ease;
 }
+/* Animación: el overlay aparece al hacer hover */
 .contenedor-foto:hover article {
     opacity: 1;
     transform: translateY(0);
 }
+/* Título dentro del overlay */
 .contenedor-foto article h2 {
     font-size: 1rem;
     margin: 0 0 6px;
     color: #fff;
 }
+/* Descripción dentro del overlay */
 .contenedor-foto article p {
     font-size: 0.85rem;
     margin: 0;
     color: #ffffffcc;
 }
+/* ==================== */
+/* LIGHTBOX (vista ampliada) */
+/* ==================== */
+/* Lightbox oculto por defecto */
 .lightbox {
     display: none;
     position: fixed;
     inset: 0;
     z-index: 999;
-    background-color: rgba(42, 1, 104, 0.691);
+    background-color: rgba(42, 1, 104, 0.691); /* Fondo morado oscuro */
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 16px;
     cursor: zoom-out;
 }
+/* Se activa cuando el hash de la URL coincide con el id del lightbox */
 .lightbox:target {
     display: flex;
 }
+/* Imagen ampliada dentro del lightbox */
 .lightbox img {
     max-width: 80%;
     max-height: 80%;
@@ -269,6 +318,7 @@ input[type="submit"]:hover {
     object-fit: contain;
     cursor: default;
 }
+/* Texto del pie de foto en el lightbox */
 .lightbox-caption {
     color: #fff;
     font-size: 1rem;
@@ -276,6 +326,7 @@ input[type="submit"]:hover {
     text-align: center;
     font-family: "Saira Stencil", sans-serif;
 }
+/* Botón "X" para cerrar el lightbox */
 .lightbox-close {
     position: absolute;
     top: 20px;
@@ -287,32 +338,65 @@ input[type="submit"]:hover {
     line-height: 1;
     transition: color 0.2s;
 }
+/* Hover en botón de cierre */
 .lightbox-close:hover {
     color: #6823DE;
 }
+/* Botón flotante para volver arriba */
+.btn-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background-color: #34126F;
+    color: #fff;
+    font-size: 1.6rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    transition: background 0.2s, transform 0.2s;
+    z-index: 200;
+}
+/* Hover en botón de subir */
+.btn-top:hover {
+    background-color: #6823DE;
+    transform: translateY(-4px);
+}
+/* ==================== */
+/* FOOTER */
+/* ==================== */
+/* Pie de página con fondo morado oscuro */
 footer {
     background-color: #34126F;
     color: #fff;
     padding: 1.5rem 5%;
     margin-top: 2.5rem;
     text-align: center;
-    border-top: 3px solid #6823DE;
+    border-top: 3px solid #6823DE; /* Línea decorativa morada */
 }
+/* Contenedor interno del footer centrado */
 .footer-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
 }
+/* Texto del copyright */
 .footer-content p {
     margin: 0;
     font-size: 0.85rem;
     color: #ffffffaa;
 }
+/* Contenedor de enlaces a redes sociales */
 .redes-sociales {
     display: flex;
     gap: 16px;
 }
+/* Estilo de enlace a red social */
 .redes-sociales a {
     color: #7ec8f5;
     text-decoration: none;
@@ -320,20 +404,22 @@ footer {
     font-weight: 700;
     transition: color 0.2s;
 }
-.redes-sociales a:hover {
-    color: #fff;
-    text-decoration: underline;
-}
+/* ==================== */
+/* RESPONSIVE: pantallas pequeñas (< 600px) */
+/* ==================== */
 @media (max-width: 600px) {
+    /* Header en columna en móvil */
     header {
         flex-direction: column;
         gap: 10px;
         text-align: center;
     }
+    /* Tarjetas de foto más anchas en móvil */
     .contenedor-foto {
         width: 90vw;
         height: 260px;
     }
+    /* Formulario ocupa todo el ancho disponible */
     form {
         max-width: 100%;
     }
