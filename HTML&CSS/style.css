@@ -1,0 +1,37 @@
+:root{
+    --radiusheader: 0px 0px 20px 20px;
+    --radiusfoto:20px 20px 20px 20px;
+}
+/* body{
+    
+
+} */
+header{
+    height: 150px;
+    background-color: rgb(114, 89, 255);
+    box-shadow: 0 5px 5px rgb(41, 40, 40);
+    display: flex;
+    color: white;
+    align-items: center;
+    padding-left: 25px;
+    border-radius: var(--radiusheader);
+}
+main{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+img{
+    
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: var(--radiusfoto);
+    box-shadow: 0 5px 5px darkgray;
+}
+@media screen and (max-width: 600px){
+    header{ color: black;}
+    main{ 
+        grid-template-columns: 1fr;
+    }
+}
