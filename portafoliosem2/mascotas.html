@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Jaime Garcia – Mascotas</title>
+</head>
+<body>
+
+    <!-- TASK 2: Header con flexbox -->
+    <header>
+        <h1>Mis Mascotas</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mascotas.html" aria-current="page">Mascotas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <span class="mascotas_title">Galería</span>
+
+    <!-- TASK 4: Galería con Flexbox (flex-wrap) + Grid (grid-template-columns) en mosaico -->
+    <section class="gallery">
+
+        <!-- Vista Flexbox: distribución en filas con flex-wrap -->
+        <div class="galeria-flex">
+            <a href="#foto1" class="enlace-foto">
+                <div class="contenedor-foto">
+                    <img src="5.jpeg" alt="Maine Coon">
+                    <article>
+                        <h2>Maine Coon</h2>
+                        <p>"Grande, fuerte y muy cariñoso. Destaca por su pelaje abundante y su carácter amigable."</p>
+                    </article>
+                </div>
+            </a>
+
+            <a href="#foto2" class="enlace-foto">
+                <div class="contenedor-foto">
+                    <img src="6.jpeg" alt="Bengalí">
+                    <article>
+                        <h2>Bengalí</h2>
+                        <p>Activo y juguetón. Su pelaje con manchas le da un aspecto salvaje</p>
+                    </article>
+                </div>
+            </a>
+
+            <a href="#foto3" class="enlace-foto">
+                <div class="contenedor-foto">
+                    <img src="3.jpeg" alt="Persa">
+                    <article>
+                        <h2>Persa</h2>
+                        <p>Calmado y elegante. Famoso por su cara achatada y su largo pelaje.</p>
+                    </article>
+                </div>
+            </a>
+
+            <a href="#foto4" class="enlace-foto">
+                <div class="contenedor-foto">
+                    <img src="4.jpeg" alt="Angola">
+                    <article>
+                        <h2>Angola</h2>
+                        <p>Elegante, activo y muy inteligente. Destaca por su pelaje largo y sedoso.</p>
+                    </article>
+                </div>
+            </a>
+
+            <a href="#foto5" class="enlace-foto">
+                <div class="contenedor-foto">
+                    <img src="2.jpeg" alt="San Bernardo">
+                    <article>
+                        <h2>San Bernardo</h2>
+                        <p>Grande, noble y muy protector. Destaca por su carácter tranquilo y lealtad.</p>
+                    </article>
+                </div>
+            </a>
+
+            <a href="#foto6" class="enlace-foto">
+                <div class="contenedor-foto">
+                    <img src="1.jpeg" alt="Pastor Aleman">
+                    <article>
+                        <h2>Pastor Aleman</h2>
+                        <p>Inteligente, leal y muy protector. Destaca por su facilidad de entrenamiento.</p>
+                    </article>
+                </div>
+            </a>
+        </div>
+
+        <!-- Vista Grid: mosaico con grid-template-columns -->
+        <span class="mascotas_title" style="margin-top: 2rem;">Vista Mosaico (Grid)</span>
+        <div class="galeria-grid">
+            <a href="#foto1" class="enlace-foto grid-item grid-grande">
+                <div class="contenedor-foto">
+                    <img src="5.jpeg" alt="Maine Coon">
+                    <article><h2>Maine Coon</h2></article>
+                </div>
+            </a>
+            <a href="#foto2" class="enlace-foto grid-item">
+                <div class="contenedor-foto">
+                    <img src="6.jpeg" alt="Bengalí">
+                    <article><h2>Bengalí</h2></article>
+                </div>
+            </a>
+            <a href="#foto3" class="enlace-foto grid-item">
+                <div class="contenedor-foto">
+                    <img src="3.jpeg" alt="Persa">
+                    <article><h2>Persa</h2></article>
+                </div>
+            </a>
+            <a href="#foto4" class="enlace-foto grid-item grid-ancho">
+                <div class="contenedor-foto">
+                    <img src="4.jpeg" alt="Angola">
+                    <article><h2>Angola</h2></article>
+                </div>
+            </a>
+            <a href="#foto5" class="enlace-foto grid-item">
+                <div class="contenedor-foto">
+                    <img src="2.jpeg" alt="San Bernardo">
+                    <article><h2>San Bernardo</h2></article>
+                </div>
+            </a>
+            <a href="#foto6" class="enlace-foto grid-item">
+                <div class="contenedor-foto">
+                    <img src="1.jpeg" alt="Pastor Aleman">
+                    <article><h2>Pastor Aleman</h2></article>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Lightboxes -->
+    <div id="foto1" class="lightbox">
+        <a href="#" class="lightbox-close">&#x2715;</a>
+        <img src="5.jpeg" alt="Maine Coon">
+        <p class="lightbox-caption">Maine Coon</p>
+    </div>
+    <div id="foto2" class="lightbox">
+        <a href="#" class="lightbox-close">&#x2715;</a>
+        <img src="6.jpeg" alt="Bengalí">
+        <p class="lightbox-caption">Bengalí</p>
+    </div>
+    <div id="foto3" class="lightbox">
+        <a href="#" class="lightbox-close">&#x2715;</a>
+        <img src="3.jpeg" alt="Persa">
+        <p class="lightbox-caption">Persa</p>
+    </div>
+    <div id="foto4" class="lightbox">
+        <a href="#" class="lightbox-close">&#x2715;</a>
+        <img src="4.jpeg" alt="Angola">
+        <p class="lightbox-caption">Angola</p>
+    </div>
+    <div id="foto5" class="lightbox">
+        <a href="#" class="lightbox-close">&#x2715;</a>
+        <img src="2.jpeg" alt="San Bernardo">
+        <p class="lightbox-caption">San Bernardo</p>
+    </div>
+    <div id="foto6" class="lightbox">
+        <a href="#" class="lightbox-close">&#x2715;</a>
+        <img src="1.jpeg" alt="Pastor Aleman">
+        <p class="lightbox-caption">Pastor Aleman</p>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Jaime Garcia – Todos los derechos reservados</p>
+            <p>&copy; 2026 imagenes sacas como referencias – Todos los derechos reservados al autor original</p>
+            <div class="redes-sociales">
+                <a href="https://github.com/JaimeGar99-del" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

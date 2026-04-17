@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Jaime Garcia – Home</title>
+</head>
+<body>
+    <!-- TASK 2: Header con flexbox (display:flex, justify-content, align-items) -->
+    <header id="inicio">
+        <h1>Jaime Garcia</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="#sobremi">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="mascotas.html">Mascotas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="sobremi" id="sobremi">
+        <span class="section-title">Sobre mí</span>
+        <p>Me llamo Jaime García, tengo 23 años y me considero una persona profundamente curiosa. Siempre he tenido una necesidad constante de entender las cosas más allá de lo superficial, por eso suelo investigar todo aquello que llama mi atención. No me gusta quedarme con la duda; al contrario, disfruto el proceso de buscar respuestas, cuestionar y aprender por mi cuenta.
+        Me caracterizo por tener una mentalidad inquieta y analítica. No solo me interesa adquirir información, sino comprenderla, procesarla y darle sentido. Esto me ha llevado a desarrollar un enfoque autodidacta, donde el aprendizaje constante forma parte de mi día a día.
+        Cuando algo despierta mi interés, no me quedo en lo básico: comparo, pruebo, investigo diferentes perspectivas y saco mis propias conclusiones. Considero que esta forma de ser me permite crecer continuamente, tanto a nivel personal como intelectual.
+        Creo firmemente que el conocimiento es una herramienta clave para avanzar, y por eso siempre busco mejorar, aprender cosas nuevas y retarme a mí mismo.</p>
+    </section>
+
+    <!-- TASK 3: Sección de proyectos con CSS Grid -->
+    <section class="proyectos" id="proyectos">
+        <span class="section-title">Proyectos</span>
+        <!-- TASK 3: grid-container con grid-template-columns y gap -->
+        <div class="proyectos-grid">
+            <a href="mascotas.html" class="proyecto-card">
+                <span class="proyecto-icon">🐾</span>
+                <h3>Mascotas</h3>
+                <p>Galería de mascotas</p>
+            </a>
+            <a href="#" class="proyecto-card proyecto-pending">
+                <span class="proyecto-icon">🛠️</span>
+                <h3>Próximamente</h3>
+                <p>Nuevo proyecto en desarrollo.</p>
+            </a>
+            <a href="#" class="proyecto-card proyecto-pending">
+                <span class="proyecto-icon">🛠️</span>
+                <h3>Próximamente</h3>
+                <p>Nuevo proyecto en desarrollo.</p>
+            </a>
+            <a href="#" class="proyecto-card proyecto-pending">
+                <span class="proyecto-icon">🛠️</span>
+                <h3>Próximamente</h3>
+                <p>Nuevo proyecto en desarrollo.</p>
+            </a>
+            <a href="#" class="proyecto-card proyecto-pending">
+                <span class="proyecto-icon">🛠️</span>
+                <h3>Próximamente</h3>
+                <p>Nuevo proyecto en desarrollo.</p>
+            </a>
+            <a href="#" class="proyecto-card proyecto-pending">
+                <span class="proyecto-icon">🛠️</span>
+                <h3>Próximamente</h3>
+                <p>Nuevo proyecto en desarrollo.</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="contacto" id="contacto">
+        <span class="section-title">Contacto</span>
+        <form action="">
+            <label for="fname">Nombre</label>
+            <input type="text" id="fname" name="fname" placeholder="Tu nombre">
+
+            <label for="lname">Apellido</label>
+            <input type="text" id="lname" name="lname" placeholder="Tu apellido">
+            
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Tu correo">
+
+            <label for="password1">Contraseña</label>
+            <input type="password" id="password1" name="password1" placeholder="Tu Contraseña">
+
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+
+    <a href="#inicio" class="btn-top" aria-label="Volver arriba">&#8679;</a>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Jaime Garcia – Todos los derechos reservados</p>
+            <div class="redes-sociales">
+                <a href="https://github.com/JaimeGar99-del" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
