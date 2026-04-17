@@ -74,7 +74,7 @@ input[type="submit"]:hover { background-color: #6823DE; }
 
 /* GALERÍA */
 .gallery { padding: 2rem 4%; background: linear-gradient(135deg, #ede9f9 0%, #d4c8f5 100%); border-radius: 20px; margin: 1.5rem 2%; box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
-.galeria-flex { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px 0 0; }
+.galeria-flex { display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; padding: 20px 0 0; }
 .galeria-flex .contenedor-foto { width: 280px; height: 280px; }
 .galeria-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 220px; gap: 16px; padding: 20px 0 0; }
 .grid-grande { grid-row: span 2; }
