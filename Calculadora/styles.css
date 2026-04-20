@@ -1,0 +1,87 @@
+:root {
+            --fondo: #00434a;
+            --card: #59e07b;
+            --boton: #086f54;
+            --display-txt: #333;
+            --negro: #161616;
+        }
+
+        body {
+            background-color: var(--fondo);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Fraunces', serif;
+        }
+
+        .calculadora {
+            background-color: var(--card);
+            padding: 30px;
+            border-radius: 40px;
+            box-shadow: 15px 15px 0px var(--negro);
+            width: 350px;
+        }
+
+        /* DISPLAY SECCIONADO (Como la imagen) */
+        .display-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            gap: 8px;
+        }
+
+        .segmento {
+            background: white;
+            height: 60px;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            color: var(--display-txt);
+            box-shadow: inset 0px 4px 0px rgba(0,0,0,0.1);
+        }
+
+        .segmento.operador { flex: 0.6; background: #f0f0f0; }
+
+        .igual { font-size: 1.5rem; font-weight: bold; }
+
+        #res {
+            background: var(--negro);
+            color: white;
+            flex: 1.2;
+            box-shadow: none;
+        }
+
+        /* TECLADO */
+        .teclado {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        button {
+            height: 60px;
+            border: none;
+            border-radius: 15px;
+            background-color: var(--boton);
+            color: white;
+            font-size: 1.4rem;
+            font-family: inherit;
+            cursor: pointer;
+            box-shadow: 0px 5px 0px #044d3a;
+            transition: all 0.1s;
+        }
+
+        button:active {
+            transform: translateY(4px);
+            box-shadow: 0px 1px 0px #044d3a;
+        }
+
+        .btn-esp { background-color: #0b9b76; } /* Botones C y borrar */
+        .btn-op { background-color: var(--negro); } /* Botones +, -, *, / */
+        .col-2 { grid-column: span 2; }

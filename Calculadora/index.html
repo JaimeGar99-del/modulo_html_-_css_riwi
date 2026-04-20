@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Pro Seccionada</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="calculadora">
+        <div class="display-container">
+            <div class="segmento" id="sec-n1"></div>
+            <div class="segmento operador" id="sec-op"></div>
+            <div class="segmento" id="sec-n2"></div>
+            <div class="igual">=</div>
+            <div class="segmento" id="res"></div>
+        </div>
+        <div class="teclado">
+            <button class="btn-esp col-2" onclick="limpiar()">C</button>
+            <button class="btn-esp" onclick="borrar()">←</button>
+            <button class="btn-op" onclick="setOp('/')">/</button>
+
+            <button onclick="addNum('7')">7</button>
+            <button onclick="addNum('8')">8</button>
+            <button onclick="addNum('9')">9</button>
+            <button class="btn-op" onclick="setOp('*')">*</button>
+
+            <button onclick="addNum('4')">4</button>
+            <button onclick="addNum('5')">5</button>
+            <button onclick="addNum('6')">6</button>
+            <button class="btn-op" onclick="setOp('-')">-</button>
+
+            <button onclick="addNum('1')">1</button>
+            <button onclick="addNum('2')">2</button>
+            <button onclick="addNum('3')">3</button>
+            <button class="btn-op" onclick="setOp('+')">+</button>
+
+            <button class="col-2" onclick="addNum('0')">0</button>
+            <button onclick="addNum('.')">.</button>
+            <button class="btn-op" style="background:#fff; color:#000" onclick="ejecutar()">=</button>
+        </div>
+    </div>
+    <script src="calculadora.js"></script>
+</body>
+</html>
