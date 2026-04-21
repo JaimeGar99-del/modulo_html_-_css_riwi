@@ -1,87 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 :root {
-            --fondo: #00434a;
-            --card: #59e07b;
-            --boton: #086f54;
-            --display-txt: #333;
-            --negro: #161616;
-        }
+    --fondo: #050e05;
+    --card: #0a0f0a;
+    --boton: #0d1a0d;
+    --display-bg: #040a04;
+    --verde: #00e060;
+    --verde-bright: #7dffaa;
+    --verde-op: #33ffaa;
+    --negro: #000;
+    --borde: #1a3320;
+}
 
-        body {
-            background-color: var(--fondo);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Fraunces', serif;
-        }
+body {
+    background-color: var(--fondo);
+    background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(0, 20, 0, 0.15) 3px,
+        rgba(0, 20, 0, 0.15) 4px
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Share Tech Mono', monospace;
+}
 
-        .calculadora {
-            background-color: var(--card);
-            padding: 30px;
-            border-radius: 40px;
-            box-shadow: 15px 15px 0px var(--negro);
-            width: 350px;
-        }
+.calculadora {
+    background-color: var(--card);
+    padding: 28px;
+    border-radius: 16px;
+    border: 1px solid var(--borde);
+    box-shadow:
+        0 0 0 1px #0d2010,
+        0 0 40px rgba(0, 80, 20, 0.2),
+        inset 0 1px 0 #1a3320;
+    width: 320px;
+    position: relative;
+}
 
-        /* DISPLAY SECCIONADO (Como la imagen) */
-        .display-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 25px;
-            gap: 8px;
-        }
+.calculadora::before {
+    content: 'CALC-7749';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 9px;
+    color: #1a4020;
+    letter-spacing: 3px;
+}
 
-        .segmento {
-            background: white;
-            height: 60px;
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 12px;
-            font-size: 1.5rem;
-            color: var(--display-txt);
-            box-shadow: inset 0px 4px 0px rgba(0,0,0,0.1);
-        }
+.calculadora::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(0, 0, 0, 0.04) 3px,
+        rgba(0, 0, 0, 0.04) 4px
+    );
+    pointer-events: none;
+    z-index: 10;
+}
 
-        .segmento.operador { flex: 0.6; background: #f0f0f0; }
+.display-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 22px 0 20px;
+    gap: 6px;
+    background: var(--display-bg);
+    border: 1px solid #0d2010;
+    border-radius: 8px;
+    padding: 12px 10px;
+    box-shadow: inset 0 2px 8px #000;
+}
 
-        .igual { font-size: 1.5rem; font-weight: bold; }
+.segmento {
+    background: #050c05;
+    border: 1px solid #0d2010;
+    height: 50px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 1.4rem;
+    color: var(--verde);
+    text-shadow: 0 0 8px var(--verde), 0 0 2px var(--verde);
+    letter-spacing: 1px;
+}
 
-        #res {
-            background: var(--negro);
-            color: white;
-            flex: 1.2;
-            box-shadow: none;
-        }
+.segmento.operador {
+    flex: 0.55;
+    font-size: 1.1rem;
+    color: var(--verde-op);
+    text-shadow: 0 0 8px var(--verde-op);
+}
 
-        /* TECLADO */
-        .teclado {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-        }
+.igual {
+    font-size: 1.2rem;
+    color: #1a4020;
+}
 
-        button {
-            height: 60px;
-            border: none;
-            border-radius: 15px;
-            background-color: var(--boton);
-            color: white;
-            font-size: 1.4rem;
-            font-family: inherit;
-            cursor: pointer;
-            box-shadow: 0px 5px 0px #044d3a;
-            transition: all 0.1s;
-        }
+#res {
+    background: #050c05;
+    color: var(--verde-bright);
+    text-shadow: 0 0 10px var(--verde-bright), 0 0 3px var(--verde-bright);
+    flex: 1.2;
+    border: 1px solid #0d2010;
+}
 
-        button:active {
-            transform: translateY(4px);
-            box-shadow: 0px 1px 0px #044d3a;
-        }
+.teclado {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 9px;
+}
 
-        .btn-esp { background-color: #0b9b76; } /* Botones C y borrar */
-        .btn-op { background-color: var(--negro); } /* Botones +, -, *, / */
-        .col-2 { grid-column: span 2; }
+button {
+    height: 54px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--boton);
+    color: #00cc50;
+    font-size: 1.1rem;
+    font-family: 'Share Tech Mono', monospace;
+    cursor: pointer;
+    border: 1px solid var(--borde);
+    box-shadow: 0 3px 0 #000, 0 4px 0 #060f06;
+    transition: all 0.08s;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+button:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #000;
+}
+
+.btn-esp {
+    background-color: #0a1a10;
+    color: #33dd88;
+    border-color: #1a4020;
+    box-shadow: 0 3px 0 #000, 0 4px 0 #030a04;
+}
+
+.btn-op {
+    background-color: #061a10;
+    color: #00ffaa;
+    border-color: #0d3020;
+    box-shadow: 0 3px 0 #000, 0 4px 0 #020908;
+    text-shadow: 0 0 6px #00ffaa;
+}
+
+button[onclick="ejecutar()"] {
+    background-color: #003a18;
+    color: #00ff88;
+    border-color: #007730;
+    box-shadow: 0 3px 0 #000, 0 4px 0 #001508;
+    text-shadow: 0 0 8px #00ff88;
+}
+
+.col-2 {
+    grid-column: span 2;
+}

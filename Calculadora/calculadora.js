@@ -2,12 +2,10 @@
 // const operador = document.getElementById('op');
 // const num2 = document.getElementById('n2');
 // const resultado = document.getElementById('res');
-
 //     function calcular(){
 //         const v1 = num1.value;
 //         const v2 = num2.value;
 //         const signo = operador.value.trim();
-
 //         if (isNaN(v1) || isNaN(v2)) return;
 //         let total = 0;
 //         if(signo != '') {
@@ -32,8 +30,6 @@
 //     num1.addEventListener('input', calcular);
 //     operador.addEventListener('input', calcular);
 //     num2.addEventListener('input', calcular);
-
-
 const num1 = document.getElementById('sec-n1');
 const operador = document.getElementById('sec-op');
 const num2 = document.getElementById('sec-n2');

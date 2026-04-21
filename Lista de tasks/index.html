@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <div class="app">
+ 
+        <header class="header">
+            <h1>mis tareas</h1>
+            <div class="contadores">
+                <span class="badge" id="cnt-total">0 total</span>
+                <span class="badge pendiente" id="cnt-pend">0 pendientes</span>
+                <span class="badge hecho" id="cnt-done">0 hechas</span>
+            </div>
+        </header>
+ 
+        <div class="input-area">
+            <input type="text" id="input-tarea" placeholder="Escribe una tarea..." maxlength="120" />
+            <button id="btn-agregar">agregar</button>
+        </div>
+ 
+        <div class="filtros">
+            <button class="filtro activo" data-filtro="todas">todas</button>
+            <button class="filtro" data-filtro="pendientes">pendientes</button>
+            <button class="filtro" data-filtro="hechas">hechas</button>
+        </div>
+ 
+        <ul class="lista" id="lista-tareas">
+        </ul>
+ 
+        <div class="vacia oculto" id="mensaje-vacio">
+            <p id="texto-vacio">no hay tareas aún</p>
+        </div>
+ 
+    </div>
+ 
+    <script src="list.js"></script>
+</body>
+</html>
+ 
