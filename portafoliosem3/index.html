@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Defines character encoding to support special characters -->
+    <meta charset="UTF-8">
+
+    <!-- Ensures proper scaling on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Links external CSS file for styling -->
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- Page title shown in browser tab -->
+    <title>Jaime Garcia – Home</title>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <!-- Main navigation and site title -->
+    <header id="inicio">
+        <h1>Jaime Garcia</h1>
+
+        <!-- Navigation menu -->
+        <nav>
+            <ul>
+                <!-- Indicates current active page -->
+                <li><a href="index.html" aria-current="page">Home</a></li>
+
+                <!-- Internal links to sections -->
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+                <!-- External page inside project -->
+                <li><a href="portafolio/pets.html">Pets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <!-- Personal introduction -->
+    <section class="about" id="about">
+        <span class="section-title">About Me</span>
+
+        <!-- Main description paragraph -->
+        <p id="about-text">
+            My name is Jaime García, I'm 23 years old and I consider myself a deeply curious person.
+            I've always had a constant need to understand things beyond the surface level, which is why
+            I research everything that catches my attention. I don't like leaving questions unanswered;
+            on the contrary, I enjoy the process of seeking answers, questioning, and learning on my own.
+            I'm characterized by a restless and analytical mindset. I'm not only interested in acquiring
+            information, but in understanding it, processing it, and making sense of it. This has led me
+            to develop a self-taught approach, where constant learning is part of my daily life.
+        </p>
+
+        <!-- Button to toggle additional text dynamically (handled via JavaScript) -->
+        <button id="btn-toggle-about" class="btn">Read more ▼</button>
+    </section>
+
+    <!-- ===== PROJECTS SECTION ===== -->
+    <!-- Displays portfolio projects -->
+    <section class="projects" id="projects">
+        <span class="section-title">Projects</span>
+
+        <!-- Grid container for project cards -->
+        <div class="projects-grid">
+
+            <!-- Active project -->
+            <a href="portafolio/pets.html" class="project-card">
+                <span class="project-icon">🐾</span>
+                <h3>Pets</h3>
+                <p>Pet gallery</p>
+            </a>
+
+            <!-- Placeholder projects (not yet available) -->
+            <a href="#" class="project-card project-pending">
+                <span class="project-icon">🛠️</span>
+                <h3>Coming Soon</h3>
+                <p>New project in development.</p>
+            </a>
+
+            <!-- Repeated placeholders for future projects -->
+            <a href="#" class="project-card project-pending">
+                <span class="project-icon">🛠️</span>
+                <h3>Coming Soon</h3>
+                <p>New project in development.</p>
+            </a>
+
+            <a href="#" class="project-card project-pending">
+                <span class="project-icon">🛠️</span>
+                <h3>Coming Soon</h3>
+                <p>New project in development.</p>
+            </a>
+
+            <a href="#" class="project-card project-pending">
+                <span class="project-icon">🛠️</span>
+                <h3>Coming Soon</h3>
+                <p>New project in development.</p>
+            </a>
+
+            <a href="#" class="project-card project-pending">
+                <span class="project-icon">🛠️</span>
+                <h3>Coming Soon</h3>
+                <p>New project in development.</p>
+            </a>
+        </div>
+
+        <!-- Button to show/hide extra project content -->
+        <button id="btn-toggle-extra" class="btn" style="margin-top:1.5rem;">
+            Show more projects ▼
+        </button>
+
+        <!-- Hidden section revealed via JavaScript -->
+        <div id="extra-projects" class="extra-projects hidden">
+            <p>🚀 More projects will be added here as they are developed. Stay tuned!</p>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <!-- Form to collect user messages -->
+    <section class="contact" id="contact">
+        <span class="section-title">Contact</span>
+
+        <div class="contact-card">
+            <h2 class="contact-heading">Contact Form</h2>
+
+            <!-- Short description -->
+            <p class="contact-sub">
+                Fill in your information and I'll get back to you as soon as possible.
+            </p>
+
+            <!-- Contact form -->
+            <form action="" class="contact-form">
+
+                <!-- First and last name inputs in one row -->
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <div class="input-row">
+                        <input type="text" id="fname" name="fname" placeholder="First name">
+                        <input type="text" id="lname" name="lname" placeholder="Last name">
+                    </div>
+                </div>
+
+                <!-- Email input -->
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="e.g. hello@example.com">
+                </div>
+
+                <!-- Password input -->
+                <div class="form-group">
+                    <label for="password1">Password</label>
+                    <input type="password" id="password1" name="password1" placeholder="Your password">
+                </div>
+
+                <!-- Message textarea (required field indicated visually) -->
+                <div class="form-group">
+                    <label for="message">Message <span class="required">*</span></label>
+                    <textarea id="message" name="message" rows="4" placeholder="Write your message here..."></textarea>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-send">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Button to scroll back to top -->
+    <a href="#inicio" class="btn-top" aria-label="Back to top">&#8679;</a>
+
+    <!-- ===== FOOTER ===== -->
+    <!-- Footer with copyright and social links -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Jaime Garcia – All rights reserved</p>
+
+            <!-- External social link -->
+            <div class="social-links">
+                <a href="https://github.com/JaimeGar99-del" target="_blank" rel="noopener">
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Links external JavaScript file (placed at the end for performance) -->
+    <script src="scripts/script.js"></script>
+</body>
+</html>

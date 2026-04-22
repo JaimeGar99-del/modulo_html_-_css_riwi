@@ -1,0 +1,669 @@
+/* ============================================================
+   styles.css – Jaime Garcia Portfolio
+   Defines the full visual system: layout, colors, typography,
+   components, and responsive behavior.
+   ============================================================ */
+
+/* Loads the Saira Stencil font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil:wght@400;700&display=swap');
+
+
+/* ============================================================
+   GLOBAL VARIABLES (:root)
+   Stores reusable values so changing one variable updates
+   the whole site at once.
+   ============================================================ */
+:root {
+
+    /* -- COLORS -- */
+    --color-primary:    #34126F;                  /* Deep purple – main brand color used in header, buttons, badges */
+    --color-accent:     #6823DE;                  /* Bright purple – used on hover states and highlights */
+    --color-bg:         #d9d9d9;                  /* Light grey – page background */
+    --color-surface:    #ffffff;                  /* White – used for cards and containers */
+    --color-text:       #333333;                  /* Dark grey – main readable text */
+    --color-text-light: #555555;                  /* Medium grey – secondary / helper text */
+    --color-nav-link:   rgba(255,255,255,0.8);    /* Slightly transparent white for nav links */
+    --color-footer-sub: rgba(255,255,255,0.67);   /* More transparent white for footer small text */
+    --color-shadow:     rgba(104, 35, 222, 0.27); /* Purple-tinted shadow for cards */
+
+    /* -- TYPOGRAPHY -- */
+    --font-main: "Saira Stencil", sans-serif; /* Site-wide font family */
+    --fs-base:   1rem;     /* Base font size (~16px) – all other sizes scale from this */
+    --fs-sm:     0.85rem;  /* Small text – labels, nav links, captions */
+    --fs-xs:     0.78rem;  /* Extra small – card descriptions, fine print */
+    --fs-h1:     1.4rem;   /* Site title in the header */
+    --fs-h2:     1rem;     /* Gallery card titles */
+    --fs-h3:     0.95rem;  /* Project card titles */
+
+    /* -- SPACING & SHAPE -- */
+    --radius:      10px;       /* Standard corner rounding for cards and inputs */
+    --radius-lg:   20px;       /* Larger rounding for section wrappers */
+    --gap-grid:    20px;       /* Space between grid items */
+    --section-pad: 2rem 5%;   /* Vertical and horizontal padding for all sections */
+}
+
+
+/* ============================================================
+   BASE RESET
+   Removes inconsistent default styles across browsers.
+   ============================================================ */
+
+/* Makes padding and border count inside the element width, not outside */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family:      var(--font-main);  /* Applies Saira Stencil to every element */
+    font-size:        var(--fs-base);    /* Sets the default text size */
+    line-height:      1.6;               /* Adds breathing room between lines of text */
+    margin:           0;                 /* Removes the default white gap around the page */
+    background-color: var(--color-bg);   /* Sets the grey page background */
+    color:            var(--color-text); /* Sets the default dark text color */
+}
+
+
+/* ============================================================
+   RESPONSIVE IMAGES
+   Prevents images from overflowing their container on small screens.
+   ============================================================ */
+img {
+    max-width: 100%;  /* Image can never be wider than its parent */
+    height:    auto;  /* Height scales proportionally so the image does not stretch */
+    display:   block; /* Removes the small gap that appears below inline images */
+}
+
+
+/* ============================================================
+   HEADER
+   Top bar with site name and navigation.
+   ============================================================ */
+header {
+    background-color: var(--color-primary);         /* Dark purple background */
+    padding:          0.85rem 5%;                   /* Vertical padding + 5% horizontal breathing room */
+    display:          flex;                         /* Puts the title and nav side by side */
+    justify-content:  space-between;                /* Pushes title to the left, nav to the right */
+    align-items:      center;                       /* Vertically centers both elements */
+    box-shadow:       0 2px 8px rgba(0,0,0,0.25);  /* Subtle drop shadow to lift it off the page */
+    z-index:          100;                          /* Ensures header stays on top of other elements */
+}
+
+/* Site title inside the header */
+header h1 {
+    color:     var(--color-surface); /* White text so it reads on the dark background */
+    margin:    0;                    /* Removes default heading margin */
+    font-size: var(--fs-h1);         /* Uses the h1 size variable */
+}
+
+/* Removes bullet points and default spacing from the nav list */
+nav ul {
+    list-style: none;  /* No bullet points */
+    padding:    0;     /* No left indent */
+    margin:     0;     /* No extra space around the list */
+    display:    flex;  /* Puts all nav items in a horizontal row */
+    gap:        24px;  /* 24px of space between each nav link */
+}
+
+/* Styles each navigation link */
+nav a {
+    text-decoration: none;                  /* Removes the underline */
+    color:           var(--color-nav-link); /* Semi-transparent white */
+    font-weight:     700;                   /* Bold text */
+    text-transform:  uppercase;             /* Forces all letters to uppercase */
+    font-size:       var(--fs-sm);          /* Slightly smaller than body text */
+    transition:      color 0.2s;            /* Smoothly animates the color change on hover */
+}
+
+/* Makes the link fully white when the user hovers over it */
+nav a:hover {
+    color: var(--color-surface);
+}
+
+
+/* ============================================================
+   SECTIONS
+   Shared layout rules applied to every <section> on the page.
+   ============================================================ */
+section {
+    padding:        var(--section-pad);           /* Adds space inside each section */
+    display:        flex;                         /* Uses flexbox to stack children vertically */
+    flex-direction: column;                       /* Children flow top to bottom */
+    align-items:    center;                       /* Centers children horizontally */
+    text-align:     center;                       /* Centers text inside */
+    box-shadow:     0 4px 14px rgba(0,0,0,0.08); /* Very light shadow to separate sections visually */
+}
+
+/* Each section has its own gradient background to distinguish them */
+.about    { background: linear-gradient(135deg, #fff 0%, #ede9f9 100%); }     /* White to soft lavender */
+.projects { background: linear-gradient(135deg, #ede9f9 0%, #d4c8f5 100%); }  /* Lavender to medium purple */
+.contact  { background: linear-gradient(135deg, #f5ebe8 0%, #e8d5f0 100%); }  /* Soft peach to light purple */
+
+
+/* ============================================================
+   SECTION TITLES
+   Reusable purple badge used as a heading label in every section.
+   ============================================================ */
+.section-title,
+.gallery-title {
+    background-color: var(--color-primary); /* Filled dark purple background */
+    color:            var(--color-surface); /* White text on top */
+    font-size:        var(--fs-base);       /* Same size as body text */
+    font-weight:      700;                  /* Bold */
+    letter-spacing:   0.05em;              /* Slightly spreads the letters apart */
+    text-transform:   uppercase;            /* All caps */
+    padding:          4px 14px;             /* Small inner spacing */
+    border-radius:    6px;                  /* Rounded corners to look like a badge */
+    display:          inline-block;         /* Shrinks to fit its content instead of stretching full width */
+    margin-bottom:    1rem;                 /* Adds space below the badge */
+}
+
+/* Gallery-specific variant: centers the badge horizontally */
+.gallery-title {
+    display: block;         /* Takes up its own line */
+    width:   fit-content;   /* Shrinks to the text width */
+    margin:  1.5rem auto 0; /* Centers it and adds top spacing */
+}
+
+
+/* ============================================================
+   PROJECTS GRID
+   Displays project cards in a 3-column grid on desktop.
+   ============================================================ */
+.projects-grid {
+    display:               grid;            /* Activates CSS Grid */
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap:                   var(--gap-grid); /* 20px space between cards */
+    width:                 100%;            /* Takes full section width */
+    max-width:             900px;           /* Stops growing beyond 900px */
+    margin-top:            1.5rem;          /* Space between the badge and the grid */
+}
+
+
+/* ============================================================
+   PROJECT CARD
+   Clickable card that links to a project page.
+   ============================================================ */
+.project-card {
+    display:         flex;                           /* Stacks icon, title, and description vertically */
+    flex-direction:  column;                         /* Children flow top to bottom */
+    align-items:     center;                         /* Centers content horizontally */
+    text-align:      center;
+    text-decoration: none;                           /* Removes underline from the anchor tag */
+    background:      var(--color-surface);           /* White card background */
+    color:           var(--color-primary);           /* Dark purple text */
+    padding:         20px 16px;                      /* Inner spacing */
+    border-radius:   var(--radius);                  /* Rounded corners */
+    box-shadow:      0 3px 10px var(--color-shadow); /* Purple-tinted shadow */
+    font-weight:     700;
+    gap:             8px;                            /* Space between icon, title, and description */
+    transition:      background 0.2s, color 0.2s, transform 0.2s; /* Smooth hover animation */
+}
+
+/* Hovering fills the card with accent purple and lifts it slightly */
+.project-card:hover {
+    background: var(--color-accent);  /* Bright purple fill */
+    color:      var(--color-surface); /* White text */
+    transform:  translateY(-4px);     /* Moves the card 4px upward */
+}
+
+.project-card .project-icon { font-size: 2rem; }                                                    /* Large emoji icon */
+.project-card h3             { margin: 0; font-size: var(--fs-h3); }                                /* Project name */
+.project-card p              { margin: 0; font-size: var(--fs-xs); opacity: 0.75; font-weight: 400; } /* Faded description */
+
+/* Makes cards that are not ready look dimmed */
+.project-pending { opacity: 0.65; }
+
+/* Extra projects block shown/hidden by JavaScript */
+.extra-projects {
+    margin-top:    1rem;
+    padding:       1rem 1.5rem;
+    background:    var(--color-surface);           /* White background */
+    border-radius: var(--radius);
+    box-shadow:    0 3px 10px var(--color-shadow); /* Purple shadow */
+    font-size:     var(--fs-sm);
+    color:         var(--color-primary);
+    font-weight:   700;
+}
+
+
+/* ============================================================
+   BUTTONS
+   Reusable .btn class applied to all buttons on the page.
+   ============================================================ */
+.btn {
+    background-color: var(--color-primary); /* Dark purple background */
+    color:            var(--color-surface); /* White text */
+    padding:          10px 24px;            /* Comfortable click area */
+    border:           none;                 /* Removes default browser border */
+    border-radius:    6px;
+    cursor:           pointer;              /* Shows hand cursor on hover */
+    font-size:        var(--fs-base);
+    font-weight:      700;
+    font-family:      var(--font-main);     /* Matches the site font */
+    transition:       background 0.2s, transform 0.2s; /* Smooth hover effect */
+}
+
+/* Brightens and lifts the button when hovered */
+.btn:hover {
+    background-color: var(--color-accent); /* Switches to bright purple */
+    transform:        translateY(-2px);    /* Lifts button 2px upward */
+}
+
+/* Completely hides an element – used by JavaScript to toggle visibility */
+.hidden {
+    display: none !important; /* !important prevents other rules from overriding it */
+}
+
+
+/* ============================================================
+   CONTACT CARD
+   White card wrapper that contains the entire contact form.
+   ============================================================ */
+.contact-card {
+    background:    var(--color-surface);            /* White background */
+    border-radius: var(--radius-lg);                /* Larger rounded corners */
+    box-shadow:    0 6px 28px var(--color-shadow);  /* Deeper shadow for elevation */
+    padding:       2rem 2.5rem;                     /* Generous inner spacing */
+    max-width:     540px;                           /* Prevents the card from getting too wide */
+    width:         100%;                            /* Fills available width up to max-width */
+    text-align:    left;                            /* Left-aligns labels and inputs inside */
+}
+
+/* Card heading "Contact Form" */
+.contact-heading {
+    margin:    0 0 0.25rem;          /* No top margin, small gap below */
+    font-size: 1.25rem;              /* Slightly larger than body text */
+    color:     var(--color-primary); /* Dark purple */
+}
+
+/* Subtitle below the heading */
+.contact-sub {
+    margin:      0 0 1.5rem;              /* Space below before inputs start */
+    font-size:   var(--fs-sm);
+    color:       var(--color-text-light); /* Medium grey */
+    font-weight: 400;                     /* Normal weight, not bold */
+}
+
+/* Stacks all form fields vertically with equal spacing */
+.contact-form {
+    display:        flex;
+    flex-direction: column; /* Fields go top to bottom */
+    gap:            1rem;   /* 1rem gap between each field */
+}
+
+/* Each label + input group */
+.form-group {
+    display:        flex;
+    flex-direction: column; /* Label sits directly above its input */
+    gap:            6px;    /* Small gap between label and input */
+}
+
+/* Labels inside the form */
+.form-group label {
+    font-size:   var(--fs-sm);
+    font-weight: 700;                    /* Bold so labels stand out */
+    color:       var(--color-primary);   /* Dark purple */
+}
+
+/* Places First Name and Last Name inputs side by side */
+.input-row {
+    display:               grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap:                   12px;    /* Space between the two inputs */
+}
+
+/* Red asterisk that marks required fields */
+.required {
+    color: var(--color-accent); /* Bright purple to draw attention */
+}
+
+/* Shared styling for all text inputs and the textarea */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    padding:       10px 14px;           /* Inner spacing so text does not touch the edges */
+    border:        1.5px solid #ddd;    /* Light grey border */
+    border-radius: 8px;
+    font-size:     var(--fs-base);
+    font-family:   var(--font-main);    /* Uses site font inside inputs */
+    background:    #faf9ff;             /* Very slightly purple-tinted white */
+    color:         var(--color-text);
+    transition:    border-color 0.2s, box-shadow 0.2s; /* Smooth focus animation */
+    width:         100%;
+}
+
+/* Highlights the active input with a purple border and glow */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    outline:      none;                             /* Removes default blue browser outline */
+    border-color: var(--color-accent);              /* Purple border */
+    box-shadow:   0 0 0 3px rgba(104,35,222,0.12); /* Soft purple glow */
+}
+
+/* The message textarea */
+textarea {
+    resize:     vertical;  /* User can make it taller but not wider */
+    min-height: 100px;     /* Always at least 100px tall */
+}
+
+/* Send button stretches across the full card width */
+.btn-send {
+    width:          100%;    /* Full width */
+    padding:        12px;    /* Taller than normal buttons */
+    margin-top:     0.25rem;
+    border-radius:  8px;
+    letter-spacing: 0.04em;  /* Slightly spaced letters */
+}
+
+
+/* ============================================================
+   GALLERY SECTION WRAPPER
+   Styled container that holds the mosaic grid.
+   ============================================================ */
+.gallery {
+    padding:        2rem 4%;
+    background:     linear-gradient(135deg, #ede9f9 0%, #d4c8f5 100%); /* Lavender gradient */
+    border-radius:  var(--radius-lg);
+    margin:         1.5rem 2%;
+    box-shadow:     0 4px 16px rgba(0,0,0,0.1);
+    display:        flex;
+    flex-direction: column;
+    align-items:    center; /* Centers the grid and titles horizontally */
+}
+
+
+/* ============================================================
+   GALLERY GRID
+   CSS Grid layout for the mosaic photo arrangement.
+   ============================================================ */
+.gallery-grid {
+    display:               grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-auto-rows:        220px;          /* Each row is exactly 220px tall */
+    gap:                   16px;
+    padding:               20px 0 0;
+    width:                 100%;
+}
+
+/* Makes a card span 2 rows – creates a tall mosaic cell */
+.grid-tall { grid-row: span 2; }
+
+/* Makes a card span 2 columns – creates a wide mosaic cell */
+.grid-wide { grid-column: span 2; }
+
+
+/* ============================================================
+   PHOTO LINK
+   The <a> tag that wraps each gallery card – fills its grid cell.
+   ============================================================ */
+.photo-link {
+    text-decoration: none;    /* Removes underline from the anchor */
+    color:           inherit; /* Inherits text color from parent */
+    display:         block;   /* Makes the anchor fill its grid cell */
+    height:          100%;    /* Stretches to the full row height */
+}
+
+
+/* ============================================================
+   PHOTO CARD
+   The visible image card inside each gallery cell.
+   ============================================================ */
+.photo-card {
+    position:      relative;                       /* Needed so the overlay sits on top of the image */
+    overflow:      hidden;                         /* Clips the zoomed image inside the card edges */
+    border-radius: 12px;
+    box-shadow:    0 4px 16px var(--color-shadow); /* Purple shadow */
+    cursor:        pointer;
+    width:         100%;
+    height:        100%;                           /* Fills the 220px row height from the grid */
+}
+
+/* Image fills the entire card without distorting */
+.photo-card img {
+    width:      100%;
+    height:     100%;
+    object-fit: cover;           /* Crops to fill without stretching */
+    transition: transform 0.35s; /* Smooth zoom animation */
+}
+
+/* Zooms the image in slightly when the card is hovered */
+.photo-card:hover img {
+    transform: scale(1.08); /* 8% bigger – creates a dynamic feel */
+}
+
+/* Dark overlay that slides up over the image on hover */
+.photo-card article {
+    position:        absolute;           /* Sits on top of the image */
+    inset:           0;                  /* Covers the full card area */
+    background:      rgba(40,1,107,0.5); /* Semi-transparent dark purple */
+    color:           var(--color-surface);
+    display:         flex;
+    flex-direction:  column;
+    justify-content: center;             /* Centers content vertically */
+    align-items:     center;             /* Centers content horizontally */
+    text-align:      center;
+    opacity:         0;                  /* Invisible by default */
+    transform:       translateY(16px);   /* Starts slightly below its final position */
+    transition:      opacity 0.35s, transform 0.35s; /* Fades and slides in on hover */
+    padding:         20px;
+}
+
+/* Makes the overlay visible and slides it into place */
+.photo-card:hover article {
+    opacity:   1;
+    transform: translateY(0); /* Returns to its original position */
+}
+
+/* Pet name displayed on the overlay */
+.photo-card article h2 {
+    margin:    0;
+    font-size: var(--fs-h2);
+    color:     var(--color-surface); /* White */
+}
+
+
+/* ============================================================
+   LIGHTBOX
+   Fullscreen overlay that shows a large version of a photo
+   when the user clicks a gallery card.
+   ============================================================ */
+
+/* Hidden by default */
+.lightbox {
+    display:    none;
+    position:   fixed;                   /* Covers the entire viewport */
+    inset:      0;                       /* Stretches to all four edges */
+    background: rgba(42,1,104,0.69);     /* Semi-transparent dark purple backdrop */
+    z-index:    999;                     /* Sits on top of everything on the page */
+}
+
+/* Activates when the URL hash matches this element's ID (e.g. clicking #photo1) */
+.lightbox:target {
+    display:         flex;
+    justify-content: center;    /* Centers the image horizontally */
+    align-items:     center;    /* Centers the image vertically */
+    flex-direction:  column;    /* Stacks image above the caption */
+    gap:             16px;
+    cursor:          zoom-out;  /* Tells the user they can click to close */
+}
+
+/* The enlarged photo inside the lightbox */
+.lightbox img {
+    max-width:     80%;   /* Never wider than 80% of the screen */
+    max-height:    80%;   /* Never taller than 80% of the screen */
+    border-radius: 12px;
+    box-shadow:    0 8px 40px rgba(0,0,0,0.6); /* Strong shadow lifts it off the backdrop */
+    object-fit:    contain; /* Shows the full image without any cropping */
+    cursor:        default; /* Normal cursor on the image itself */
+}
+
+/* Caption text shown below the photo */
+.lightbox-caption {
+    color:       var(--color-surface);
+    font-size:   var(--fs-base);
+    font-weight: 700;
+}
+
+/* X button fixed to the top-right corner to close the lightbox */
+.lightbox-close {
+    position:        absolute;
+    top:             20px;
+    right:           28px;
+    font-size:       2rem;
+    color:           var(--color-surface);
+    text-decoration: none;
+    font-weight:     900;
+    transition:      color 0.2s;
+}
+
+/* X button turns accent purple on hover */
+.lightbox-close:hover {
+    color: var(--color-accent);
+}
+
+
+/* ============================================================
+   BACK TO TOP BUTTON
+   Fixed circular button in the bottom-right corner.
+   Clicking it scrolls the user back to the top of the page.
+   ============================================================ */
+.btn-top {
+    position:         fixed;   /* Stays in the corner no matter how far the user scrolls */
+    bottom:           32px;    /* 32px from the bottom of the screen */
+    right:            32px;    /* 32px from the right edge of the screen */
+    width:            48px;
+    height:           48px;
+    border-radius:    50%;     /* Perfect circle */
+    background-color: var(--color-primary);
+    color:            var(--color-surface);
+    display:          flex;
+    align-items:      center;
+    justify-content:  center;
+    text-decoration:  none;
+    box-shadow:       0 4px 14px rgba(0,0,0,0.3);
+    font-family:      Arial, sans-serif; /* Arial renders the arrow symbol correctly */
+    font-size:        1.4rem;
+    line-height:      1;
+    transition:       background 0.2s, transform 0.2s;
+    z-index:          200; /* Stays above all page content */
+}
+
+/* Brightens and lifts the button on hover */
+.btn-top:hover {
+    background-color: var(--color-accent);
+    transform:        translateY(-4px);
+}
+
+
+/* ============================================================
+   FOOTER
+   Bottom bar with copyright text and social links.
+   ============================================================ */
+footer {
+    background-color: var(--color-primary);       /* Dark purple background */
+    color:            var(--color-surface);        /* White text */
+    padding:          1.5rem;
+    text-align:       center;
+    border-top:       3px solid var(--color-accent); /* Bright purple top border as a visual accent */
+    margin-top:       2.5rem;                        /* Space above the footer */
+}
+
+.footer-content {
+    display:        flex;
+    flex-direction: column; /* Stacks copyright text and links vertically */
+    align-items:    center;
+    gap:            8px;
+}
+
+.footer-content p {
+    margin:    0;
+    font-size: var(--fs-sm);
+    color:     var(--color-footer-sub); /* Slightly transparent white */
+}
+
+/* Row of social media links */
+.social-links { display: flex; gap: 16px; }
+
+.social-links a {
+    color:           #7ec8f5;     /* Light blue stands out on the dark background */
+    text-decoration: none;
+    font-size:       var(--fs-sm);
+    font-weight:     700;
+    transition:      color 0.2s;
+}
+
+/* Turns white and underlines on hover */
+.social-links a:hover {
+    color:           var(--color-surface);
+    text-decoration: underline;
+}
+
+
+/* ============================================================
+   MEDIA QUERIES – RESPONSIVE LAYOUT
+   Adjusts the layout depending on the screen width.
+   ============================================================ */
+
+/* ── MOBILE (600px wide or less) ──────────────────────────────── */
+@media (max-width: 600px) {
+
+    /* Stacks the site title and nav menu vertically */
+    header {
+        flex-direction: column;
+        text-align:     center;
+    }
+
+    /* Wraps nav links onto multiple lines and centers them */
+    nav ul {
+        flex-wrap:       wrap;
+        justify-content: center;
+        gap:             12px;
+    }
+
+    /* Projects show in a single column instead of 3 */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Gallery switches to 2 columns with shorter row height */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows:        160px; /* Shorter rows fit better on small screens */
+    }
+
+    /* Removes the mosaic span effects so every card is the same size */
+    .grid-tall,
+    .grid-wide {
+        grid-row:    span 1; /* No longer tall */
+        grid-column: span 1; /* No longer wide */
+    }
+
+    /* Contact card reduces padding on small screens */
+    .contact-card { padding: 1.25rem; }
+
+    /* First/last name inputs stack vertically instead of side by side */
+    .input-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── TABLET (601px – 1024px) ──────────────────────────────────── */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    /* Projects show in 2 columns instead of 3 */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Gallery keeps 3 columns but uses slightly shorter rows */
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows:        180px;
+    }
+}
+
+/* ── DESKTOP (wider than 1024px) ──────────────────────────────── */
+/* No overrides needed – the default styles already define the desktop layout */

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- ============================================================
+         META & RESOURCES
+         Basic document setup and external styles
+         ============================================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <title>Jaime Garcia – Pets</title>
+</head>
+<body>
+ 
+    <!-- ============================================================
+         HEADER
+         Page title and navigation menu
+         ============================================================ -->
+    <header>
+        <h1>My Pets</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="pets.html" aria-current="page">Pets</a></li>
+            </ul>
+        </nav>
+    </header>
+ 
+    <!-- ============================================================
+         MAIN GALLERY TITLE
+         ============================================================ -->
+    <span class="section-title gallery-title">Gallery</span>
+ 
+    <!-- ============================================================
+         MOSAIC GALLERY
+         Responsive grid layout with different spans
+         ============================================================ -->
+    <section class="gallery">
+        <span class="section-title gallery-title" style="margin-top:2rem;">Mosaic View</span>
+ 
+        <div class="gallery-grid">
+ 
+            <!-- Standard grid item -->
+            <a href="#photo1" class="photo-link grid-item">
+                <div class="photo-card">
+                    <img src="../img/5.jpeg" alt="Maine Coon">
+                    <article><h2>Maine Coon</h2></article>
+                </div>
+            </a>
+ 
+            <!-- Wide item (spans 2 columns) -->
+            <a href="#photo2" class="photo-link grid-wide">
+                <div class="photo-card">
+                    <img src="../img/6.jpeg" alt="Bengali">
+                    <article><h2>Bengali</h2></article>
+                </div>
+            </a>
+ 
+            <!-- Standard grid item -->
+            <a href="#photo3" class="photo-link grid-item">
+                <div class="photo-card">
+                    <img src="../img/3.jpeg" alt="Persian">
+                    <article><h2>Persian</h2></article>
+                </div>
+            </a>
+ 
+            <!-- Standard grid item -->
+            <a href="#photo4" class="photo-link grid-item">
+                <div class="photo-card">
+                    <img src="../img/4.jpeg" alt="Angora">
+                    <article><h2>Angora</h2></article>
+                </div>
+            </a>
+ 
+            <!-- Tall item (spans 2 rows) -->
+            <a href="#photo5" class="photo-link grid-tall">
+                <div class="photo-card">
+                    <img src="../img/2.jpeg" alt="Saint Bernard">
+                    <article><h2>Saint Bernard</h2></article>
+                </div>
+            </a>
+ 
+            <!-- Wide item (spans 2 columns) -->
+            <a href="#photo6" class="photo-link grid-wide">
+                <div class="photo-card">
+                    <img src="../img/1.jpeg" alt="German Shepherd">
+                    <article><h2>German Shepherd</h2></article>
+                </div>
+            </a>
+ 
+        </div>
+    </section>
+ 
+    <!-- ============================================================
+         LIGHTBOX MODALS
+         Fullscreen image preview when clicking a gallery item
+         ============================================================ -->
+    <div id="photo1" class="lightbox">
+        <a href="#" class="lightbox-close">&#x2715;</a>
+        <img src="../img/5.jpeg" alt="Maine Coon">
+        <p class="lightbox-caption">Maine Coon</p>
+    </div>
+
+    <div id="photo2" class="lightbox">
+        <a href="#" class="lightbox-close">&#x2715;</a>
+        <img src="../img/6.jpeg" alt="Bengali">
+        <p class="lightbox-caption">Bengali</p>
+    </div>
+
+    <div id="photo3" class="lightbox">
+        <a href="#" class="lightbox-close">&#x2715;</a>
+        <img src="../img/3.jpeg" alt="Persian">
+        <p class="lightbox-caption">Persian</p>
+    </div>
+
+    <div id="photo4" class="lightbox">
+        <a href="#" class="lightbox-close">&#x2715;</a>
+        <img src="../img/4.jpeg" alt="Angora">
+        <p class="lightbox-caption">Angora</p>
+    </div>
+
+    <div id="photo5" class="lightbox">
+        <a href="#" class="lightbox-close">&#x2715;</a>
+        <img src="../img/2.jpeg" alt="Saint Bernard">
+        <p class="lightbox-caption">Saint Bernard</p>
+    </div>
+
+    <div id="photo6" class="lightbox">
+        <a href="#" class="lightbox-close">&#x2715;</a>
+        <img src="../img/1.jpeg" alt="German Shepherd">
+        <p class="lightbox-caption">German Shepherd</p>
+    </div>
+ 
+    <!-- ============================================================
+         FOOTER
+         Copyright and external links
+         ============================================================ -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Jaime Garcia – All rights reserved</p>
+            <p style="font-size:0.75rem; color:#ffffff66;">
+                Images used as references – All rights belong to their original authors
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/JaimeGar99-del" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </footer>
+ 
+</body>
+</html>
